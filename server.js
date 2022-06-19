@@ -2,12 +2,14 @@ const express = require("express");
 
 const app = express();
 
+const cors=require('cors');
 const connectDB = require("./db/connect");
 require("dotenv").config();
 const taskRoutes = require("./routes/tasks");
 
 // middlewares
 app.use(express.json());
+app.use(cors());
 
 // routes
 app.get("/hello", (req, res) => {
@@ -15,7 +17,7 @@ app.get("/hello", (req, res) => {
 });
 app.use("/api/v1/tasks", taskRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 const start = async () => {
   try {
