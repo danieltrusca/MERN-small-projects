@@ -5,3 +5,27 @@
     /* border: 1px solid black; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.task-header-title {
+    font-size: 26px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.task-header-button {
+    background-color: aqua;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.task-header-button:hover {
+    background-color: rgb(18, 94, 94);
+    border: 1px solid rgb(18, 19, 19);
+    color: white;
+}
+
+.task-header-input {
+    width: 270px;
+    padding: 4px;
+}

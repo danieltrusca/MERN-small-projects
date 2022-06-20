@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchTasks } from "../redux/actions/tasks";
 
 import TaskHeader from "../components/TaskHeader/TaskHeader";
+import TasksBody from "../components/Tasks/Tasks";
 
 import "./styles.css";
 
 const Tasks = () => {
   const dispatch = useDispatch();
+  const { tasks } = useSelector((state) => state.taskReducer);
 
   useEffect(() => {
     dispatch(fetchTasks());
@@ -17,6 +19,7 @@ const Tasks = () => {
   return (
     <div className="task_container">
       <TaskHeader />
+      <TasksBody tasks={tasks} />
     </div>
   );
 };
