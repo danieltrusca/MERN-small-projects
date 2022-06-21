@@ -6,16 +6,17 @@ const cors=require('cors');
 const connectDB = require("./db/connect");
 require("dotenv").config();
 const taskRoutes = require("./routes/tasks");
+const notFound=require("./middleware/NotFound");
+
 
 // middlewares
 app.use(express.json());
 app.use(cors());
 
 // routes
-app.get("/hello", (req, res) => {
-  res.send("task manager");
-});
+
 app.use("/api/v1/tasks", taskRoutes);
+app.use(notFound);
 
 const PORT = process.env.PORT || 5000;
 
