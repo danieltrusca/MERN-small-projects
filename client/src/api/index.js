@@ -6,3 +6,5 @@ export const fetchTasks = () => API.get("/tasks");
 export const createTask = (newTask) => API.post("/tasks", newTask);
 export const deleteTask = (taskId) => API.delete(`/tasks/${taskId}`);
 export const fetchTask = (taskId) => API.get(`/tasks/${taskId}`);
+export const editTask = (editTask, taskId) =>
+  API.patch(`/tasks/${taskId}`, editTask);

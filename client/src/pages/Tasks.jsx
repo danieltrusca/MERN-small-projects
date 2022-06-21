@@ -10,7 +10,7 @@ import "./styles.css";
 
 const Tasks = () => {
   const dispatch = useDispatch();
-  const { tasks } = useSelector((state) => state.taskReducer);
+  const { tasks, isLoading } = useSelector((state) => state.taskReducer);
 
   useEffect(() => {
     dispatch(fetchTasks());
@@ -19,7 +19,7 @@ const Tasks = () => {
   return (
     <div className="task_container">
       <TaskHeader />
-      <TasksBody tasks={tasks} />
+      {isLoading ? <h1>Loading ...</h1> : <TasksBody tasks={tasks} />}
     </div>
   );
 };

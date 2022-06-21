@@ -2,11 +2,18 @@ import {
   FETCH_ALL_TASKS,
   ADD_TASK,
   DELETE_TASK,
+  EDIT_TASK,
   FETCH_TASK,
+  START_LOADING,
+  END_LOADING,
 } from "../actions/type";
 
-const taskReducers = (state = { tasks: [] }, action) => {
+const taskReducers = (state = { tasks: [], isLoading: true }, action) => {
   switch (action.type) {
+    case START_LOADING:
+      return { ...state, isLoading: true };
+    case END_LOADING:
+      return { ...state, isLoading: false };
     case FETCH_ALL_TASKS:
       return {
         ...state,
@@ -16,6 +23,13 @@ const taskReducers = (state = { tasks: [] }, action) => {
       return {
         ...state,
         tasks: [...state.tasks, action.payload],
+      };
+    case EDIT_TASK:
+      return {
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task._id === action.payload._id ? action.payload : task
+        ),
       };
     case DELETE_TASK:
       return {

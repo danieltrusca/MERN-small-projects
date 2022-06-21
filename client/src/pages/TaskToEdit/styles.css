@@ -1,0 +1,80 @@
+.task__toEdit-container {
+  height: 100vh;
+  width: 100wh;
+  background-color: white; /* For browsers that do not support gradients */
+  background-image: linear-gradient(white, black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task__toEdit-paper {
+  width: 350px;
+  height: 500px;
+  background-color: aliceblue;
+  position: relative;
+}
+
+.task__toEdit-closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.task__toEdit-closeIcon:hover {
+  font-size: 24px;
+  color: blue;
+}
+
+.taskToEdit__title {
+  text-align: center;
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+.taskToEdit__taskId {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+.taskToEdit__taskId h4 {
+  font-size: 20px;
+}
+
+.taskToEdit__taskId label {
+  font-size: 20px;
+}
+
+.taskToEdit__taskId input {
+  font-size: 16px;
+  width: 180px;
+}
+
+.taskToEdit__taskId h6 {
+  font-size: 16px;
+}
+
+.taskToEdit__submitButton {
+  width: 90%;
+  background-color: rgb(47, 49, 173);
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  margin: 5%;
+  cursor: pointer;
+}
+
+.taskToEdit__backTasks {
+  width: 60%;
+  background-color: rgb(17, 17, 19);
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  margin: 10px 20%;
+  cursor: pointer;
+  text-align: center;
+}
