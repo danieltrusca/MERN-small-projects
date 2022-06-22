@@ -18,8 +18,7 @@ app.use(cors());
 // routes
 
 app.use("/api/v1/tasks", taskRoutes);
-app.use(notFound);
-app.use(errorHandlerMiddleware);
+
 
 // --------------------------deployment------------------------------
 if (process.env.NODE_ENV == "production") {
@@ -43,6 +42,9 @@ if (process.env.NODE_ENV == "production") {
 //   });
 // }
 // --------------------------deployment------------------------------
+
+app.use(notFound);
+app.use(errorHandlerMiddleware);
 
 const PORT = process.env.PORT || 5000;
 
