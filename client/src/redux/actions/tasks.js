@@ -8,6 +8,7 @@ import {
   FETCH_TASK,
   START_LOADING,
   END_LOADING,
+  FETCH_ERROR,
 } from "./type";
 
 export const fetchTasks = () => async (dispatch) => {
@@ -56,7 +57,11 @@ export const addTask = (newTask) => async (dispatch) => {
       payload: data.task,
     });
   } catch (error) {
-    console.log(error.message);
+    dispatch({
+      type: FETCH_ERROR,
+      payload: error.response.data.msg,
+    });
+    // console.log(error.response.data.msg);
   }
 };
 
@@ -69,7 +74,10 @@ export const editTask = (editTask, taskId) => async (dispatch) => {
       payload: data.task,
     });
   } catch (error) {
-    console.log(error.message);
+    dispatch({
+      type: FETCH_ERROR,
+      payload: error.response.data.msg,
+    });
   }
 };
 

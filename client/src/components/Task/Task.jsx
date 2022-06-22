@@ -2,6 +2,7 @@ import React from "react";
 
 import { deleteTask } from "../../redux/actions/tasks";
 import { useDispatch } from "react-redux";
+import { REMOVE_ERROR } from "../../redux/actions/type";
 
 import { useNavigate } from "react-router-dom";
 
@@ -14,12 +15,18 @@ const Task = ({ task }) => {
   const navigate = useNavigate();
 
   const handleDelete = (taskId) => {
+    dispatch({
+      type: REMOVE_ERROR,
+    });
     if (taskId) {
       dispatch(deleteTask(taskId));
     }
   };
 
   const handleEdit = (task) => {
+    dispatch({
+      type: REMOVE_ERROR,
+    });
     navigate(`/tasks/${task._id}`);
   };
   return (

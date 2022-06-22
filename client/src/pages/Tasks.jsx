@@ -6,6 +6,8 @@ import { fetchTasks } from "../redux/actions/tasks";
 import TaskHeader from "../components/TaskHeader/TaskHeader";
 import TasksBody from "../components/Tasks/Tasks";
 
+import Loader from "../components/Loader/Loader";
+
 import "./styles.css";
 
 const Tasks = () => {
@@ -19,7 +21,7 @@ const Tasks = () => {
   return (
     <div className="task_container">
       <TaskHeader />
-      {isLoading ? <h1>Loading ...</h1> : <TasksBody tasks={tasks} />}
+      {isLoading ? <Loader /> : <TasksBody tasks={tasks} />}
     </div>
   );
 };

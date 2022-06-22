@@ -30,3 +30,10 @@
     width: 240px;
     padding: 4px;
 }
+
+.task-manager-errors {
+    margin-top: 5px;
+    color: red;
+    font-size: 12px;
+    text-align: center;
+}

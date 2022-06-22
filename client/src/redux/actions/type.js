@@ -4,5 +4,8 @@ export const DELETE_TASK = "DELETE_TASK";
 export const EDIT_TASK = "EDIT_TASK";
 export const FETCH_TASK = "FETCH_TASK";
 
+export const FETCH_ERROR='FETCH_ERROR';
+export const REMOVE_ERROR='REMOVE_ERROR';
+
 export const START_LOADING = "START_LOADING";
 export const END_LOADING = "END_LOADING";

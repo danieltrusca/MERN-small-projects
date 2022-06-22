@@ -6,14 +6,29 @@ import {
   FETCH_TASK,
   START_LOADING,
   END_LOADING,
+  FETCH_ERROR,
+  REMOVE_ERROR,
 } from "../actions/type";
 
-const taskReducers = (state = { tasks: [], isLoading: true }, action) => {
+const taskReducers = (
+  state = { tasks: [], isLoading: true, errors: "" },
+  action
+) => {
   switch (action.type) {
     case START_LOADING:
       return { ...state, isLoading: true };
     case END_LOADING:
       return { ...state, isLoading: false };
+    case FETCH_ERROR:
+      return {
+        ...state,
+        errors: action.payload,
+      };
+    case REMOVE_ERROR:
+      return {
+        ...state,
+        errors: "",
+      };
     case FETCH_ALL_TASKS:
       return {
         ...state,

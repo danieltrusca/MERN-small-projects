@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTask } from "../../redux/actions/tasks";
+import { REMOVE_ERROR } from "../../redux/actions/type";
 
 import "./styles.css";
 
 const TaskHeader = () => {
   const dispatch = useDispatch();
+  const errors = useSelector((state) => state.taskReducer.errors);
   const [newTask, setNewTask] = useState("");
 
   const handleSubmit = (e) => {
@@ -23,7 +25,12 @@ const TaskHeader = () => {
         <input
           type="text"
           value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
+          onChange={(e) => {
+            setNewTask(e.target.value);
+            dispatch({
+              type: REMOVE_ERROR,
+            });
+          }}
           placeholder="e.g. wash dishes"
           className="task-header-input"
           required
@@ -32,6 +39,7 @@ const TaskHeader = () => {
           Submit
         </button>
       </form>
+      {errors && <h6 className="task-manager-errors">{errors}</h6>}
     </div>
   );
 };

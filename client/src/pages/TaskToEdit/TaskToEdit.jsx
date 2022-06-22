@@ -5,6 +5,7 @@ import { fetchTask, editTask } from "../../redux/actions/tasks";
 import { useDispatch, useSelector } from "react-redux";
 
 import { AiOutlineClose } from "react-icons/ai";
+import Loader from "../../components/Loader/Loader";
 
 import "./styles.css";
 
@@ -15,6 +16,7 @@ const TaskToEdit = () => {
   const dispatch = useDispatch();
   const task = useSelector((state) => state.taskReducer.taskToEdit);
   const isLoading = useSelector((state) => state.taskReducer.isLoading);
+  const errors = useSelector((state) => state.taskReducer.errors);
 
   const [taskEditName, setTaskEditName] = useState(task?.name);
   const [taskEditCompleted, setTaskEditCompleted] = useState(task?.completed);
@@ -36,13 +38,14 @@ const TaskToEdit = () => {
       completed: taskEditCompleted,
     };
     dispatch(editTask(body, task?._id));
+
     navigate("/");
   };
 
   return (
     <div className="task__toEdit-container">
       {isLoading ? (
-        <h1>Loading ...</h1>
+        <Loader />
       ) : (
         <div className="task__toEdit-paper">
           <AiOutlineClose
@@ -81,6 +84,8 @@ const TaskToEdit = () => {
             <button type="submit" className="taskToEdit__submitButton">
               Edit
             </button>
+
+            {errors && <h6 className="task-to-edit-errors">{errors}</h6>}
 
             <div onClick={handleEscape} className="taskToEdit__backTasks">
               Back To Tasks
