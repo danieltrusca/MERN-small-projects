@@ -8,6 +8,7 @@ require("dotenv").config();
 const path = require("path");
 
 const taskRoutes = require("./routes/tasks");
+const productsRoutes=require("./routes/products");
 const notFound = require("./middleware/NotFound");
 const errorHandlerMiddleware = require("./middleware/errorHandler");
 
@@ -18,6 +19,7 @@ app.use(cors());
 // routes
 
 app.use("/api/v1/tasks", taskRoutes);
+app.use("/api/v1/products", productsRoutes);
 
 
 // --------------------------deployment------------------------------
