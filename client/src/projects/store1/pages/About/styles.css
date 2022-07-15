@@ -1,0 +1,51 @@
+.app__store__about-wrapper {
+  display: grid;
+  gap: 4rem;
+}
+
+.app__store__about-wrapper img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+  height: 500px;
+  object-fit: cover;
+}
+
+.title {
+  text-align: center;
+}
+
+.title h2 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+}
+
+.title .underline {
+  width: 6rem;
+  height: 0.25rem;
+  background: #49a6e9;
+  background: var(--clr-primary-5);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app__store__about-wrapper p {
+  line-height: 2;
+  max-width: 45em;
+  margin: 0 auto;
+  margin-top: 2rem;
+  color: var(--clr-grey-5);
+}
+
+@media (min-width: 992px) {
+  .app__store__about-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .title h2 {
+    font-size: 2.5rem;
+  }
+}

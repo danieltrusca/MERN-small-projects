@@ -1,0 +1,77 @@
+.app__store__home__contact-wrapper {
+  padding: 5rem 0;
+}
+
+.app__store__home__contact-wrapper h3 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.app__store__home__contact-content p {
+  line-height: 2;
+  max-width: 45em;
+  color: var(--clr-grey-5);
+}
+
+.app__store__home__contact-form {
+  width: 90vw;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.app__store__home__contact-form-input,
+.app__store__home__contact-submit-btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--clr-black);
+}
+
+.app__store__home__contact-form-input {
+  border-right: none;
+  color: var(--clr-grey-3);
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+
+.app__store__home__contact-form-input::placeholder {
+  color: var(--clr-black);
+  text-transform: capitalize;
+}
+
+.app__store__home__contact-submit-btn {
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  background: var(--clr-primary-5);
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--clr-black);
+}
+
+.app__store__home__contact-submit-btn:hover {
+  color: var(--clr-white);
+}
+
+@media screen and (min-width: 800px) {
+  .app__store__home__contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 8rem;
+    margin-top: 2rem;
+  }
+  .app__store__home__contact-wrapper h3 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .app__store__home__contact-wrapper {
+    padding: 15rem 0;
+  }
+}

@@ -3,4 +3,6 @@ import FeaturedProducts from "./FeaturedProducts/FeaturedProducts";
 import Services from "./Services/Services";
 import Contact from "./Contact/Contact";
 
-export { Hero, FeaturedProducts, Services, Contact };
+import PageHero from "./PageHero/PageHero";
+
+export { Hero, FeaturedProducts, Services, Contact, PageHero };
